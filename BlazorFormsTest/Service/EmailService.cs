@@ -15,9 +15,9 @@ namespace BlazorFormsTest.Service
 
         public async Task<bool> SendEmailAsync(Contact contact)
         {
-            SendGridMessage message = new SendGridMessage();
-            EmailAddress emailAddress = new EmailAddress(contact.Email, contact.Name);
-            List<EmailAddress> recipients = new List<EmailAddress> { new EmailAddress("email@yes.com", "Winter")};
+            SendGridMessage message = new();
+            EmailAddress emailAddress = new(contact.Email, contact.Name);
+            List<EmailAddress> recipients = new() { new EmailAddress("email@yes.com", "Winter")};
 
             message.SetSubject("Testing email");
             message.SetFrom(emailAddress);
